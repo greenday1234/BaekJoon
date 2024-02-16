@@ -18,16 +18,14 @@ public class Main {
         for (int i = 0; i < N; i++) {
             arr.add(Integer.parseInt(st.nextToken()));
         }
+        
         max = arr.get(0);
         min = arr.get(0);
 
         for (int i = 1; i < N; i++) {
-            if(Math.max(arr.get(i - 1), arr.get(i)) > max){
-                max = Math.max(arr.get(i - 1), arr.get(i));
-            }
-            if(Math.min(arr.get(i - 1), arr.get(i)) < min){
-                min = Math.min(arr.get(i - 1), arr.get(i));
-            }
+            max = Math.max(max, arr.get(i));
+            min = Math.min(min, arr.get(i));
+          
         }
 
         System.out.println(min + " " + max);
